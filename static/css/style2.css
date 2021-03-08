@@ -204,4 +204,13 @@ body {
           transform: translateY(100%);
   display: inline-block;
 }
+@media (max-width: 1150px) {
+  .t,
+  .t1 {
+    margin: 0 2em;
+  }
+  .socialMedia {
+    bottom: 25;
+  }
+}
 /*# sourceMappingURL=style1.css.map */
