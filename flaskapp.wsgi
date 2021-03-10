@@ -1,3 +1,3 @@
 import sys 
-sys.path.insert(0, '/var/www/html/flask/daSadWeb')
-from daSadWeb import app as application
+sys.path.insert(0, '/var/www/html/flaskapp')
+from flaskapp import app as application
