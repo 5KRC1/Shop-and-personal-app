@@ -1,5 +1,8 @@
 # myPersonalWebAndMyShop
 
-#my personal website + my ecommerce website (from my other repo)
+#my personal website + my ecommerce website
 
-#Im still a beginner, so the code might not be spectacular :)
+To Do / Improvements:
+  -Payments
+  -store order data
+  -clean css
