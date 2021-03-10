@@ -1,0 +1,51 @@
+{% extends 'baseshop.html' %}
+{% block title %}Finish Order{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/finishOrder18.css')}}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="userInfo">
+            <ul>
+                <div>
+                    <li>{{order.name}},</li>
+
+                </div>
+                <div>
+                    <li>{{order.lastName}},</li>
+                </div>
+                <div>
+                    <li>{{order.city}},</li>
+                </div>
+                <div>
+                    <li>{{order.postalNum}},</li>
+                </div>
+                <div>
+                    <li>{{order.street}},</li>
+                </div>
+                <div>
+                    <li>{{order.houseNum}},</li>
+                </div>
+                <div>
+                    <li>{{order.country}}</li>
+                </div>
+                <button class="change"><a href="/update/{{order.id}}">Change</a></button>
+            </ul>
+        </div>
+        <div class="orderInfo">
+            <div class="products-container">
+                <div class="headers">
+                    <h5 class="title1">Products</h5>
+                    <h5 class="price">Price</h5>
+                    <h5 class="quantity">Quantity</h5>
+                    <h5 class="total">Total</h5>
+                </div>
+                <div class="products-wrap"> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subBtnContainer">
+        <a href="/thanks" class="submit">Submit</a>
+    </div>
+{% endblock %}

@@ -1,51 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YourSadPayment</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/cart179.css')}}">
-    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="icon" href="{{url_for('static', filename='photos/favicon.ico')}}" type="image/icon">
-</head>
-<body>
-    <nav class="nav">
-        <div class="text-nav">
-            <div class="left">
-                <a class="link" href="/shop">Keycaps</a>
-            </div>
-            <div class="right">
-                <a href="/"><p class="name">DaSadShop</p></a>
-            </div>
-            <a class="cart-link" href="cart.html">
-                <i class="fa fa-shopping-cart icon"></i><span class="item-number">0</span>
-            </a>
-        </div>
-    </nav>
+{% extends 'baseshop.html' %}
+{% block title %}DaSadData{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cart192.css')}}">
+{% endblock %}
+{% block content %}
 
+    {% if error_statement %}
+        <div class="alert-container">
+            <div class="alert-background">
+                <div class="alert">
+                    <h1 style="color: white;">
+                        {{error_statement}}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    {% endif %}
     <div class="userInput">
-        <form class="userInput1">
-            <label>First name:</label>
-            <input class="input" type="text"><br><br>
-            <label>Last name:</label>
-            <input class="input" type="text"><br><br>
-            <label>City:</label>
-            <input class="input" type="text"><br><br>
-            <label>Postal number:</label>
-            <input class="input" type="text"><br><br>
-            <label>House number:</label>
-            <input class="input" type="text"><br><br>
-            <label>Country:</label>
-            <input class="input" type="text"><br><br>
-            <input type="submit" value="Submit" class="submit">
+        <form class="userInput1" action="/finishOrder" method="POST">
+            <input class="input" type="text" placeholder="First Name:" name="firstName">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="Last Name:" name="lastName">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="City:" name="city">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="Postal Number:" name="postalNumber">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="Street:" name="street">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="House Number:" name="houseNumber">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="Country:" name="country">
+            <br/>
+            <br/>
+            <button type="submit" class="Submit">Submit</button>
         </form>
     </div>
-
-    <div class="copyright">
-        <div class="line"><p class="cpytext">Copyright © 2021 DaSadWeb</p></div>
-    </div>
-    <script src="{{url_for('static', filename='js/shop.js')}}"></script>
-</body>
-</html>
+{% endblock %}

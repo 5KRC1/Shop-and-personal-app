@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Title
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" href="{{url_for('static', filename='css/shop1.css')}}">
+    {% endblock %}
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="icon" href="{{url_for('static', filename='photos/favicon.ico')}}" type="image/icon">
+<body>
+    <nav class="nav">
+        <div class="text-nav">
+            <div class="left">
+                <a class="link" href="{{url_for('shop', filename='#keycaps')}}">Keycaps</a>
+            </div>
+            <div class="right">
+                <a href="{{url_for('home')}}"><p class="name">DaSadShop</p></a>
+            </div>
+            <a class="cart-link" href="cart">
+                <i class="fa fa-shopping-cart icon"></i><span class="item-number">0</span>
+            </a>
+        </div>
+    </nav>
+{%block content%}
+{% endblock %}
+<div class="copyright">
+    <div class="line"><p class="cpytext">Copyright © 2021 DaSadWeb</p></div>
+</div>
+{% block js %}
+    <script src="{{url_for('static', filename='js/shop.js')}}"></script>
+{% endblock %}
+</body>
+</html>

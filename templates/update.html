@@ -1,0 +1,51 @@
+{% extends 'baseshop.html' %}
+{% block title %}DaSadData{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cart192.css')}}">
+{% endblock %}
+{% block content %}
+
+    {% if error_statement %}
+        <div class="alert-container">
+            <div class="alert-background">
+                <div class="alert">
+                    <h1 style="color: white;">
+                        {{error_statement}}
+                    </h1>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="userInput">
+        <form class="userInput1" action="/update/{{dataUpdate.id}}" method="POST">
+            <input class="input" type="text" placeholder="First Name:" name="firstName" value="{{dataUpdate.name}}">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="Last Name:" name="lastName" value="{{dataUpdate.lastName}}">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="City:" name="city" value="{{dataUpdate.city}}">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="Postal Number:" name="postalNumber" value="{{dataUpdate.postalNum}}">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="Street:" name="street" value="{{dataUpdate.street}}">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="House Number:" name="houseNumber" value="{{dataUpdate.houseNum}}">
+            <br/>
+            <br/>
+
+            <input class="input" type="text" placeholder="Country:" name="country" value="{{dataUpdate.country}}">
+            <br/>
+            <br/>
+            <button type="submit" class="Submit">Change</button>
+        </form>
+    </div>
+{% endblock %}
