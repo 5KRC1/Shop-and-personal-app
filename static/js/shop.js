@@ -213,7 +213,7 @@ function displayCart() {
         let cartCost = localStorage.getItem('totalCost');
         productContainer.innerHTML += `
         <div class="basketTotalContainer">
-            <h4 class="basketTotal1">Basket total: </h4>
+            <h4 class="basketTotal1">Total: </h4>
             <h4 class="basketTotal">${cartCost} Eur</h4>
         </div>
         `
@@ -234,12 +234,15 @@ if (cart3490 == 0){
 
 function button() {
     let btn = document.querySelector(".orderButton");
-
-    btn.addEventListener('click', () => {
-        btn.innerHTML = `
-        <a href="/payment" class="orderLink">Confirm Order</a>
-        `   
-    });
+        btn.addEventListener('click', () => {
+            if (localStorage.getItem('productsInCart') != null)
+                btn.innerHTML = `
+                <a href="/userdata" class="orderLink">Confirm Order</a>
+                `  
+            else{
+                alert('Your cart is empty.');
+            }
+        });
 }
 
 
