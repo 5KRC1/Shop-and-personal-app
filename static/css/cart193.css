@@ -247,57 +247,9 @@ ion-icon {
 }
 
 /*=========smaller screen==========*/
-@media (max-width: 900px) {
-  .item-number {
-    font-size: 12px;
-  }
-  .keycaps {
-    -ms-grid-columns: 5% 1fr 1fr 1fr 5%;
-        grid-template-columns: 5% 1fr 1fr 1fr 5%;
-  }
-  .item4 {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2 / 3;
-  }
-  .item5 {
-    grid-column: auto;
-  }
-  .item7 {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2 / 3;
-  }
-}
-
-@media (max-width: 550px) {
-  .cart-link {
-    right: 7%;
-  }
-  .item-number {
-    font-size: 10px;
-  }
-  .keycaps {
-    -ms-grid-columns: 5% 1fr 1fr 5%;
-        grid-template-columns: 5% 1fr 1fr 5%;
-  }
-  .item3 {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2 / 3;
-  }
-  .item4 {
-    grid-column: auto;
-  }
-  .item5 {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2 / 3;
-  }
-  #slider figure {
-    left: 1%;
-    -webkit-transition: .3s;
-    transition: .3s;
+@media (max-width: 670px) {
+  img {
+    display: none;
   }
 }
 
