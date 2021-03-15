@@ -31,11 +31,11 @@
     </nav>
 {%block content%}
 {% endblock %}
-<div class="copyright">
-    <div class="line"><p class="cpytext">Copyright © 2021 DaSadWeb</p></div>
-</div>
-{% block js %}
+    <div class="copyright">
+        <div class="line"><p class="cpytext">Copyright © 2021 DaSadWeb</p></div>
+    </div>
     <script src="{{url_for('static', filename='js/shop.js')}}"></script>
-{% endblock %}
+    {% block js %}
+    {% endblock %}
 </body>
 </html>

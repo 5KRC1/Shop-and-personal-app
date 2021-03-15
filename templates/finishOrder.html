@@ -8,28 +8,28 @@
         <div class="userInfo">
             <ul>
                 <div>
-                    <li>{{order.name}},</li>
+                    <li>{{user}},</li>
+                </div>
+                <div>
+                    <li>{{surname}},</li>
+                </div>
+                <div>
+                    <li>{{location}},</li>
+                </div>
+                <div>
+                    <li>{{postalCode}},</li>
+                </div>
+                <div>
+                    <li>{{streets}},</li>
+                </div>
+                <div>
+                    <li>{{numberOfHouse}},</li>
+                </div>
+                <div>
+                    <li>{{nation}}</li>
+                </div>
 
-                </div>
-                <div>
-                    <li>{{order.lastName}},</li>
-                </div>
-                <div>
-                    <li>{{order.city}},</li>
-                </div>
-                <div>
-                    <li>{{order.postalNum}},</li>
-                </div>
-                <div>
-                    <li>{{order.street}},</li>
-                </div>
-                <div>
-                    <li>{{order.houseNum}},</li>
-                </div>
-                <div>
-                    <li>{{order.country}}</li>
-                </div>
-                <button class="change"><a href="/update/{{order.id}}">Change</a></button>
+                <button class="change"><a href="/update">Change</a></button>
             </ul>
         </div>
         <div class="orderInfo">
@@ -46,6 +46,45 @@
         </div>
     </div>
     <div class="subBtnContainer">
-        <a href="/thanks" class="submit">Submit</a>
+        <button class="submit" onclick="sendLocalStorage();">Submit</button>
     </div>
+{% endblock %}
+{% block js %}
+    <script>
+        function sendLocalStorage(){
+            //grab items from localStorage
+            let items = JSON.parse(localStorage.getItem('productsInCart'));
+            let price = JSON.parse(localStorage.getItem('totalCost'));
+
+            //make an array to wich we will store needed info of order
+            let cart = []
+
+            //save info in an array
+            for (let i = 0; i < Object.keys(items).length; i++){
+                cart.push(items[Object.keys(items)[i]]['name'] + ' : ' + items[Object.keys(items)[i]]['inCart']);
+            }
+
+            //wierd shet to make it ' into " for python to be able to save in db
+            cart = JSON.stringify(cart);
+
+            let order = {
+                items: cart,
+                cost: price
+            };
+
+            order = JSON.stringify(order);
+            order = order.replace(/"/g, "'");
+
+            //send data to python
+            fetch(`${window.origin}/finishOrder/thanks`, {
+                method: "POST",
+                body: JSON.stringify(order),
+                cache: "no-cache",
+                headers: new Headers({
+                    "content-type": "application/json"
+                })
+            })
+            window.location.href = "{{url_for('over')}}"
+        }
+    </script>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'baseshop.html' %}
 {% block title %}DaSadData{% endblock %}
 {% block css %}
-    <link rel="stylesheet" href="{{url_for('static', filename='css/cart192.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cart193.css')}}">
 {% endblock %}
 {% block content %}
 
@@ -17,32 +17,32 @@
         </div>
     {% endif %}
     <div class="userInput">
-        <form class="userInput1" action="/update/{{dataUpdate.id}}" method="POST">
-            <input class="input" type="text" placeholder="First Name:" name="firstName" value="{{dataUpdate.name}}">
+        <form class="userInput1" action="#" method="POST">
+            <input class="input" type="text" placeholder="First Name:" name="firstName" value="{{user}}">
             <br/>
             <br/>
 
-            <input class="input" type="text" placeholder="Last Name:" name="lastName" value="{{dataUpdate.lastName}}">
+            <input class="input" type="text" placeholder="Last Name:" name="lastName" value="{{surname}}">
             <br/>
             <br/>
 
-            <input class="input" type="text" placeholder="City:" name="city" value="{{dataUpdate.city}}">
+            <input class="input" type="text" placeholder="City:" name="city" value="{{location}}">
             <br/>
             <br/>
 
-            <input class="input" type="text" placeholder="Postal Number:" name="postalNumber" value="{{dataUpdate.postalNum}}">
+            <input class="input" type="text" placeholder="Postal Number:" name="postalNumber" value="{{postalCode}}">
             <br/>
             <br/>
 
-            <input class="input" type="text" placeholder="Street:" name="street" value="{{dataUpdate.street}}">
+            <input class="input" type="text" placeholder="Street:" name="street" value="{{streets}}">
             <br/>
             <br/>
 
-            <input class="input" type="text" placeholder="House Number:" name="houseNumber" value="{{dataUpdate.houseNum}}">
+            <input class="input" type="text" placeholder="House Number:" name="houseNumber" value="{{numberOfHouse}}">
             <br/>
             <br/>
 
-            <input class="input" type="text" placeholder="Country:" name="country" value="{{dataUpdate.country}}">
+            <input class="input" type="text" placeholder="Country:" name="country" value="{{nation}}">
             <br/>
             <br/>
             <button type="submit" class="Submit">Change</button>
