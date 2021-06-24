@@ -32,10 +32,6 @@ class Orders(db.Model):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
-
-@app.route('/shop')
-def shop():
     return render_template('shop.html')
 
 @app.route('/cart')
